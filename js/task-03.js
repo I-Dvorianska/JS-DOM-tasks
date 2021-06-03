@@ -15,12 +15,19 @@ const images = [
 
 const galleryEl = document.querySelector("#gallery");
 
-const makeAString = (image) => {
-  return `<li><img src='${image.url}' alt='${image.alt}' width = 500></img><li>`;
-};
+const markupText = images.map(
+  (image) =>
+    `<li><img src= '${image.url}' alt= '${image.alt}'width = 500 ></li>`
+);
 
-const findImage = images.map(makeAString).join("");
+galleryEl.insertAdjacentHTML("beforeend", markupText.join(""));
 
-galleryEl.insertAdjacentHTML("beforeend", findImage);
+// const makeAString = (image) => {
+//   return `<li><img src='${image.url}' alt='${image.alt}' width = 500></img><li>`;
+// };
 
-galleryEl.style.display = "flex";
+// const findImage = images.map(makeAString).join("");
+
+// galleryEl.insertAdjacentHTML("beforeend", findImage);
+
+// galleryEl.style.display = "flex";
