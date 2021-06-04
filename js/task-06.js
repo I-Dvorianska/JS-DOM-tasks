@@ -9,9 +9,7 @@ function verifyValidationOfInput(event) {
   if (event.currentTarget.value.length === attributeValue) {
     event.currentTarget.classList.add("valid");
     event.currentTarget.classList.remove("invalid");
-  }
-
-  if (event.currentTarget.value.length !== attributeValue) {
+  } else {
     event.currentTarget.classList.add("invalid");
     event.currentTarget.classList.remove("valid");
   }
