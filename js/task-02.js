@@ -7,14 +7,10 @@ const ingredients = [
   "Приправы",
 ];
 
-function createListElements(array) {
-  const ingredientListTag = document.querySelector("ul");
+const ingredientListTag = document.querySelector("ul");
 
-  array.map((element) => {
-    const ingredient = document.createElement("li");
+const productList = ingredients.map((element) => {
+  return `<li> ${element} </li>`;
+});
 
-    ingredient.textContent = element;
-    ingredientListTag.appendChild(ingredient);
-  });
-}
-createListElements(ingredients);
+ingredientListTag.insertAdjacentHTML("beforeend", productList.join(""));
